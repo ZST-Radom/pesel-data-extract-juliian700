@@ -8,6 +8,9 @@ public class PersonId
     {
         _id = Id;
     }
+
+
+
     /// <summary>
     /// Get full year from PESEL
     /// </summary>
@@ -22,8 +25,11 @@ public class PersonId
     /// </summary>
     public int GetMonth()
     {
-        return 0;
+        string month = _id.Substring(startIndex: 2, length: 2);
+        int monthInInt = int.Parse(month);
+        return monthInInt;
     }
+
 
     /// <summary>
     /// Get day from PESEL
@@ -31,7 +37,9 @@ public class PersonId
     /// <returns></returns>
     public int GetDay()
     {
-        return 0;
+        string day = _id.Substring(startIndex: 4, length: 2);
+        int dayInInt = int.Parse(day);
+        return dayInInt;
     }
 
     /// <summary>
@@ -40,7 +48,12 @@ public class PersonId
     /// <returns></returns>
     public int GetYearOfBirth()
     {
-        return 0;
+        string year = _id.Substring(startIndex: 0, length: 2);
+        int yearInInt = int.Parse(year);
+        return yearInInt;
+
+
+
     }
 
     /// <summary>
@@ -50,8 +63,13 @@ public class PersonId
     /// <returns>f</returns>
     public string GetGender()
     {
-        return "";
+        string gender = _id.Substring(startIndex: 9, length: 1);
+        int genderInInt = int.Parse(gender);
+        return gender;
     }
+
+    ///return _id.Substring(startIndex: 9, length: 1);
+
 
     /// <summary>
     /// check if PESEL is valid
